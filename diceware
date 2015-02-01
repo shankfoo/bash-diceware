@@ -1,0 +1,9 @@
+#!/bin/bash
+
+file="./diceware8k.txt"
+
+for i in {1..5}; do
+	printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1) "
+done
+
+printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1)\n"
