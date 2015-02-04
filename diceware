@@ -3,14 +3,6 @@
 file="./diceware8k.txt"
 words=6
 
-for (( i=1; i<=$words; i++ )); do
+lines="$( sort -R --random-source=/dev/urandom $file | head -n$words )"
 
-	printf "$( sort -R --random-source=/dev/urandom $file | head -n1 )"
-	
-	if [[ $i == $words ]]; then
-		printf "\n"
-	else
-		printf " "
-	fi
-	
-done
+echo $lines
