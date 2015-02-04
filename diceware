@@ -5,7 +5,7 @@ words=6
 
 for (( i=1; i<=$words; i++ )); do
 
-	printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1)"
+	printf "$( sort -R --random-source=/dev/urandom $file | head -n1 )"
 	
 	if [[ $i == $words ]]; then
 		printf "\n"
