@@ -1,9 +1,16 @@
 #!/bin/bash
 
 file="./diceware8k.txt"
+words=6
 
-for i in {1..5}; do
-	printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1) "
+for (( i=1; i<=$words; i++ )); do
+
+	printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1)"
+	
+	if [[ $i == $words ]]; then
+		printf "\n"
+	else
+		printf " "
+	fi
+	
 done
-
-printf "$(cat $file | sort -R --random-source=/dev/urandom | head -n1)\n"
