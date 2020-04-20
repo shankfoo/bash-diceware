@@ -1,8 +1,0 @@
-#!/bin/bash
-
-file="./diceware8k.txt"
-words=6
-
-lines="$( sort -R --random-source=/dev/urandom $file | head -n$words )"
-
-echo $lines
